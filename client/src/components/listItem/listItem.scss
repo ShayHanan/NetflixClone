@@ -1,0 +1,94 @@
+.listItem {
+    position: relative;
+    width: 225px;
+    height: 140px;
+    background-color: var(--main-color);
+    margin-right: 7px;
+    transition-duration: .5s;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:hover {
+        -webkit-box-shadow: 0px 0px 9px -1px #FFFFFF;
+        box-shadow: 0px 0px 9px -1px #FFFFFF;
+        border-radius: 5px;
+        width: 325px;
+        height: 280px;
+        top: -25px;
+        transition-delay: 1s;
+
+        video {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            animation: cssAnimation 0s 1s forwards;
+            visibility: hidden;
+
+            @keyframes cssAnimation {
+                to {
+                    visibility: visible;
+                }
+            }
+        }
+
+        img {
+            height: 140px;
+        }
+
+        .itemInfo {
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+
+            .icons {
+                display: flex;
+                margin-bottom: 5px;
+
+                .icon {
+                    border: 1px solid white;
+                    padding: 5px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    font-size: 16px;
+                    color: white;
+                }
+            }
+
+            .itemInfoTop {
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                font-size: 11px;
+                font-weight: 600;
+                color: gray;
+                gap: 10px;
+
+                .limit {
+                    border: 1px solid gray;
+                    padding: 1px 3px;
+                }
+            }
+
+            .desc {
+                font-size: 13px;
+                margin-bottom: 10px;
+                color: white;
+            }
+
+            .genre {
+                font-size: 13px;
+                color: gray
+            }
+        }
+    }
+}
